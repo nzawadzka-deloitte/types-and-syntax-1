@@ -1,0 +1,12 @@
+{
+  "name": "types-and-syntax-day-1",
+  "version": "2.0.0",
+  "description": "Types and Syntax - 1",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
