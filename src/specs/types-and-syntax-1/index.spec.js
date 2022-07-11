@@ -107,12 +107,12 @@ describe('unit testing - types and syntax - 1', () => {
             reallyMessyText = "   Some really messy text     ",
             ringOfFire = "And it burns, burns, burns - the ring of fire, the ring of fire.";
 
-        expect(name.replace("Lennon", "R. Cash")).toEqual( /* YOUR ANSWER HERE */ );
-        expect(firstName.concat(" ", secondName)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(reallyMessyText.trim()).toEqual( /* YOUR ANSWER HERE */ );
-        expect(ringOfFire.split(",")[2].trim()).toEqual( /* YOUR ANSWER HERE */ );
-        expect(ringOfFire.split("-")[1].trim()).toEqual( /* YOUR ANSWER HERE */ );
-        expect(ringOfFire.split(" ")[0].trim()).toEqual( /* YOUR ANSWER HERE */ );
+        expect(name.replace("Lennon", "R. Cash")).toEqual( "John R. Cash" );
+        expect(firstName.concat(" ", secondName)).toEqual("Johnny Cash" );
+        expect(reallyMessyText.trim()).toEqual( "Some really messy text");
+        expect(ringOfFire.split(",")[2].trim()).toEqual("burns - the ring of fire" );
+        expect(ringOfFire.split("-")[1].trim()).toEqual( "the ring of fire, the ring of fire." );
+        expect(ringOfFire.split(" ")[0].trim()).toEqual("And");
     });
 
     test('defines arrays precisely', () => {
@@ -127,14 +127,14 @@ describe('unit testing - types and syntax - 1', () => {
                 cars instanceof Function
             ];
 
-        expect(cars.length).toEqual( /* YOUR ANSWER HERE */ );
-        expect(cars[2]).toEqual( /* YOUR ANSWER HERE */ );
-        expect(cars.indexOf("Volvo")).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof cars).toEqual( /* YOUR ANSWER HERE */ );
-        expect(Array.isArray(cars)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(cars.length).toEqual( 3);
+        expect(cars[2]).toEqual( "BMW");
+        expect(cars.indexOf("Volvo")).toEqual( 1);
+        expect(typeof cars).toEqual( "object" );
+        expect(Array.isArray(cars)).toEqual( true );
 
         /* SWAP THE INDEX 99 TO THE CORRECT VALUE */
-        expect(instances[99]).toEqual(true);
+        expect(instances[4]).toEqual(true);
     });
 
     test('array manipulations', () => {
@@ -156,24 +156,24 @@ describe('unit testing - types and syntax - 1', () => {
 
         cars.push("Audi");
         cars.unshift("Porsche");
-        expect(cars.length).toEqual( /* YOUR ANSWER HERE */ );
-        expect(cars.indexOf("Audi")).toEqual( /* YOUR ANSWER HERE */ );
-        expect(cars.indexOf("Porsche")).toEqual( /* YOUR ANSWER HERE */ );
+        expect(cars.length).toEqual( 5 );
+        expect(cars.indexOf("Audi")).toEqual( 4 );
+        expect(cars.indexOf("Porsche")).toEqual( 0);
 
         cars[1] = "Ferrari";
 
-        expect(cars.includes("Ferrari")).toEqual( /* YOUR ANSWER HERE */ );
-        expect(cars.includes("Saab")).toEqual( /* YOUR ANSWER HERE */ );
-        expect(cars.indexOf("Saab")).toEqual( /* YOUR ANSWER HERE */ );
+        expect(cars.includes("Ferrari")).toEqual( true );
+        expect(cars.includes("Saab")).toEqual( false );
+        expect(cars.indexOf("Saab")).toEqual( -1 );
 
         // easy way for checking the last element of an array: Array.length - 1
         cars.pop();
-        expect(cars[cars.length - 1]).toEqual( /* YOUR ANSWER HERE */ );
+        expect(cars[cars.length - 1]).toEqual( "BMW");
 
         cars.shift();
-        expect(cars[0]).toEqual( /* YOUR ANSWER HERE */ );
+        expect(cars[0]).toEqual("Ferrari");
 
-        expect(cars.join()).toEqual( /* YOUR ANSWER HERE */ );
+        expect(cars.join()).toEqual( "Ferrari,Volvo,BMW" );
     });
 
     test('advanced array manipulations', () => {
@@ -203,32 +203,32 @@ describe('unit testing - types and syntax - 1', () => {
             stringNumbers  = ["25", 8, "100", 10, 25, "42", "8"];
 
 
-        expect(cars.indexOf("BMW")).toEqual( /* YOUR ANSWER HERE */ );
+        expect(cars.indexOf("BMW")).toEqual( 2 );
 
         cars.sort();
-        expect(cars.indexOf("BMW")).toEqual( /* YOUR ANSWER HERE */ );
+        expect(cars.indexOf("BMW")).toEqual( 1);
 
         cars.reverse();
-        expect(cars.indexOf("BMW")).toEqual( /* YOUR ANSWER HERE */ );
+        expect(cars.indexOf("BMW")).toEqual( 3);
 
         stringNumbers.sort(reverseCompareFunction);
         expect(stringNumbers.indexOf("8")).toEqual(6);
-        expect(stringNumbers.indexOf("25")).toEqual(2);
-        expect(stringNumbers.indexOf(25)).toEqual(3);
+        expect(stringNumbers.indexOf("25")).toEqual(0);
+        expect(stringNumbers.indexOf(25)).toEqual(4);
     });
 
     test('working with maps', () => {
         let myMap = new Map();
-        myMap.set("a", /* YOUR ANSWER HERE */ );
-        myMap.set("b", /* YOUR ANSWER HERE */ );
-        myMap.set("c", /* YOUR ANSWER HERE */ );
+        myMap.set("a", "Hello world" );
+        myMap.set("b", {hello: "world"});
+        myMap.set("c", 123);
 
         expect(myMap.get("a")).toEqual("Hello world");
         expect(myMap.get("b")).toEqual({ hello: "world" });
         expect(myMap.get("c")).toEqual(123);
-        expect(myMap.size).toEqual( /* YOUR ANSWER HERE */ );
+        expect(myMap.size).toEqual( 3 );
 
         myMap.delete("c");
-        expect(myMap.size).toEqual( /* YOUR ANSWER HERE */ );
+        expect(myMap.size).toEqual( 2 );
     });
 })
