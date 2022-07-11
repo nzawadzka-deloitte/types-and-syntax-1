@@ -58,15 +58,15 @@ describe('unit testing - types and syntax - 1', () => {
 
         let name = "Zakk Wylde";
 
-        expect(name.length).toEqual( /* YOUR ANSWER HERE */ );
-        expect(name.toLowerCase()).toEqual( /* YOUR ANSWER HERE */ );
-        expect(name.charAt(5)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(name.substring(0,4)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(name.length).toEqual(10);
+        expect(name.toLowerCase()).toEqual("zakk wylde");
+        expect(name.charAt(5)).toEqual("W");
+        expect(name.substring(0,4)).toEqual("Zakk");
 
         // chaining methods
 
-        expect(name.toLowerCase().substring(0,4)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(name.toUpperCase().substring(1,2)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(name.toLowerCase().substring(0,4)).toEqual( "zakk" );
+        expect(name.toUpperCase().substring(1,2)).toEqual( "A" );
     });
 
     test('finding substrings in a string', () => {
@@ -82,10 +82,10 @@ describe('unit testing - types and syntax - 1', () => {
 
         let name = "Zakk Wylde";
 
-        expect(name.indexOf("Wylde")).toEqual( /* YOUR ANSWER HERE */ );
-        expect(name.search("Zakk")).toEqual( /* YOUR ANSWER HERE */ );
-        expect(name.slice(5,10)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(name.substr(0,4)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(name.indexOf("Wylde")).toEqual(5);
+        expect(name.search("Zakk")).toEqual( 0);
+        expect(name.slice(5,10)).toEqual( "Wylde");
+        expect(name.substr(0,4)).toEqual( "Zakk" );
     });
 
     test('manipulating strings', () => {
