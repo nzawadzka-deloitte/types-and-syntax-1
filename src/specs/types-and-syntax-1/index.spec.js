@@ -4,12 +4,12 @@ describe('unit testing - types and syntax - 1', () => {
     });
 
     test('defines primitive types precisely', () => {
-        expect(typeof 2021).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof "2021").toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof true).toEqual( /* YOUR ANSWER HERE */ );
+        expect(typeof 2021).toEqual("number");
+        expect(typeof "2021").toEqual( "string" );
+        expect(typeof true).toEqual( "boolean" );
         let activity = "Bootcamp";
-        expect(typeof activity).toEqual( /* YOUR ANSWER HERE */ );
-        expect(typeof activity.length).toEqual( /* YOUR ANSWER HERE */ );
+        expect(typeof activity).toEqual( "string" );
+        expect(typeof activity.length).toEqual("number" );
     });
 
     test('defines numbers precisely', () => {
