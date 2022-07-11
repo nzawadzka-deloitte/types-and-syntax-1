@@ -19,15 +19,15 @@ describe('unit testing - types and syntax - 1', () => {
 
         let amount = 19.95;
 
-        expect(amount).toBeGreaterThan( /* YOUR ANSWER HERE */ );
-        expect(amount).toBeLessThan( /* YOUR ANSWER HERE */ );
+        expect(amount).toBeGreaterThan(19.94);
+        expect(amount).toBeLessThan( 19.96 );
 
-        expect(Number.isInteger(amount)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(Number.isInteger(amount)).toEqual( false );
 
-        expect(amount.toFixed(1)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(amount.toFixed()).toEqual( /* YOUR ANSWER HERE */ );
+        expect(amount.toFixed(1)).toEqual("19.9");
+        expect(amount.toFixed()).toEqual( "20" );
 
-        expect(amount.toString()).toEqual( /* YOUR ANSWER HERE */ );
+        expect(amount.toString()).toEqual( "19.95" );
     });
 
     test('converting to number types', () => {
@@ -35,15 +35,15 @@ describe('unit testing - types and syntax - 1', () => {
         let amount = 19.95,
             stringAmount = "19.95";
 
-        expect(Number(stringAmount)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(Number(true)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(Number(false)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(Number(stringAmount)).toEqual( 19.95 );
+        expect(Number(true)).toEqual( 1);
+        expect(Number(false)).toEqual( 0 );
 
-        expect(parseInt(amount)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(parseInt(stringAmount)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(parseInt(amount)).toEqual(19);
+        expect(parseInt(stringAmount)).toEqual( 19 );
 
-        expect(parseFloat(amount)).toEqual( /* YOUR ANSWER HERE */ );
-        expect(parseFloat(stringAmount)).toEqual( /* YOUR ANSWER HERE */ );
+        expect(parseFloat(amount)).toEqual(19.95);
+        expect(parseFloat(stringAmount)).toEqual(19.95);
     });
 
     test('defines strings precisely', () => {
